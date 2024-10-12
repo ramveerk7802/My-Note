@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyNote" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    </style>
+
+
+
+    <style name="Theme.MyNote" parent="Base.Theme.MyNote" >
+        <!-- Set to true for dark icons -->
+        <item name="android:statusBarColor">@color/lightBlue</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="myteme" parent="Theme.Material3.Light"/>
+
+
+</resources>
