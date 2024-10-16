@@ -3,6 +3,7 @@ package com.example.mynote.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.Date
 
 @Entity(tableName = "note_table")
 data class NoteEntity(
@@ -14,5 +15,8 @@ data class NoteEntity(
     var title:String,
 
     @ColumnInfo(name = "desc")
-    var desc:String
+    var desc:String,
+
+    @ColumnInfo(name ="date")
+    var date:Date
 )

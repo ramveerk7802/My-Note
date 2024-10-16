@@ -22,6 +22,6 @@ interface NoteDao {
     suspend fun deleteNote(noteEntity: NoteEntity)
 
 
-    @Query("SELECT * FROM note_table")
+    @Query("SELECT * FROM note_table ORDER BY date DESC")
     fun getAllNote():LiveData<MutableList<NoteEntity>>
 }

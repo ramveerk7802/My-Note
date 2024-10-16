@@ -22,8 +22,8 @@ import com.example.mynote.entity.NoteEntity
 import com.example.mynote.viewModel.NoteViewModel
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var adaptor: NoteAdaptor
+    private  lateinit var binding: ActivityMainBinding
+    private lateinit var adaptor1: NoteAdaptor
 
     private lateinit var viewModel: NoteViewModel
 
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.lightBlue)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.yellow)
 
         // Ensure light status bar icons if needed
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
@@ -48,24 +48,24 @@ class MainActivity : AppCompatActivity() {
 
 
         // initialize adaptor and view model
-        adaptor = NoteAdaptor(this, mutableListOf())
-         viewModel = ViewModelProvider(this)[NoteViewModel::class]
+        adaptor1 = NoteAdaptor(this@MainActivity, mutableListOf())
+
+        viewModel = ViewModelProvider(this)[NoteViewModel::class]
 
 
         binding.recycleView.layoutManager = LinearLayoutManager(this)
-        binding.recycleView.adapter = adaptor
+        binding.recycleView.adapter = adaptor1
 
           viewModel.getAllNoteList().observe(this, Observer { note ->
               note?.let {
                   Log.d("MainActivity", "Notes retrieved: ${it.size}")
-                  adaptor.updateNotes(it)
+                  adaptor1.updateNotes(it)
               }
           })
 
 
         binding.addButton.setOnClickListener{
-            startActivity(Intent(this,DataInsertActivity::class.java))
-            finish()
+            startActivity(Intent(this@MainActivity,DataInsertActivity::class.java))
         }
 
 
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
-                val note = adaptor.noteList[position]
+                val note = adaptor1.noteList[position]
                 viewModel.delete(note)
 
                 Toast.makeText(this@MainActivity,"Note is deleted.",Toast.LENGTH_SHORT).show()

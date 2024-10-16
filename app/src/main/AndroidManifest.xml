@@ -13,13 +13,16 @@
         android:theme="@style/Theme.MyNote"
         tools:targetApi="31">
         <activity
+            android:name=".ReadMoreActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataInsertActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".WelcomeActivity"
-            android:theme="@style/Theme.MyNote"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MyNote">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

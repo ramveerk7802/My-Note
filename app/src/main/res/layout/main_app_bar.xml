@@ -11,13 +11,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/lightBlue"
+        android:background="@color/yellow"
         app:elevation="4dp">
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:titleTextColor="@color/white"
+            app:titleTextColor="@color/black"
             app:title="@string/app_name"/>
     </com.google.android.material.appbar.AppBarLayout>
 
