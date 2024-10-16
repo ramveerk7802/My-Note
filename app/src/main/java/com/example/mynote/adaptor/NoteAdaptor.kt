@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mynote.DataInsertActivity
 import com.example.mynote.MainActivity
+import com.example.mynote.R
 import com.example.mynote.ReadMoreActivity
 import com.example.mynote.databinding.ItemLayoutBinding
 import com.example.mynote.entity.NoteEntity
@@ -90,6 +91,7 @@ class NoteAdaptor(var context: Context, var noteList: MutableList<NoteEntity>) :
                         builder.setTitle("Delete")
                             .setMessage("Are you sure want to remove note ?")
                             .setCancelable(false)
+                            .setIcon(R.drawable.delete)
                             .setPositiveButton("Yes"){ dialog,_ ->
                                 val viewModel = ViewModelProvider(context as MainActivity)[NoteViewModel::class]
                                 viewModel.delete(note)
