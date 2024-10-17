@@ -40,13 +40,25 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/editButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mode_edit"
+            app:layout_constraintBottom_toBottomOf="@id/deleteButton"
+            app:layout_constraintEnd_toStartOf="@id/deleteButton"
+            app:layout_constraintTop_toTopOf="@id/deleteButton"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="8dp"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
-            android:src="@drawable/mode_edit"
+            android:src="@drawable/delete"
             app:layout_constraintBottom_toBottomOf="@id/constraint"
             app:layout_constraintEnd_toEndOf="@id/constraint" />
 

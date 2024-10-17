@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
 
           viewModel.getAllNoteList().observe(this, Observer { note ->
               note?.let {
-                  Log.d("MainActivity", "Notes retrieved: ${it.size}")
                   adaptor1.updateNotes(it)
               }
           })
@@ -72,29 +71,29 @@ class MainActivity : AppCompatActivity() {
 
 
         // delete the swipe on Right direction
-        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean {
-                return false
-            }
-
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
-                val note = adaptor1.noteList[position]
-                viewModel.delete(note)
-
-                Toast.makeText(this@MainActivity,"Note is deleted.",Toast.LENGTH_SHORT).show()
-            }
-
-        }
-
-
-        // Attach the ItemTouchHelper to the RecyclerView
-        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
-        itemTouchHelper.attachToRecyclerView(binding.recycleView)
+//        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
+//            override fun onMove(
+//                recyclerView: RecyclerView,
+//                viewHolder: RecyclerView.ViewHolder,
+//                target: RecyclerView.ViewHolder
+//            ): Boolean {
+//                return false
+//            }
+//
+//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+//                val position = viewHolder.adapterPosition
+//                val note = adaptor1.noteList[position]
+//                viewModel.delete(note)
+//
+//                Toast.makeText(this@MainActivity,"Note is deleted.",Toast.LENGTH_SHORT).show()
+//            }
+//
+//        }
+//
+//
+//        // Attach the ItemTouchHelper to the RecyclerView
+//        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+//        itemTouchHelper.attachToRecyclerView(binding.recycleView)
 
 
 

@@ -84,8 +84,7 @@ class NoteAdaptor(var context: Context, var noteList: MutableList<NoteEntity>) :
                         context.startActivity(intent)
                     }
 
-
-                    root.setOnLongClickListener {
+                    deleteButton.setOnClickListener {
 
                         val builder = AlertDialog.Builder(context)
                         builder.setTitle("Delete")
@@ -101,7 +100,6 @@ class NoteAdaptor(var context: Context, var noteList: MutableList<NoteEntity>) :
                                 dialog.dismiss()
                             }
                         builder.show()
-                        true
                     }
                 }
 
